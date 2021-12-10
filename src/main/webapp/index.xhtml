@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>MENU</title>
+        <f:event type="preRenderView" listener="#{usuarioBean.verificarSesion()}"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="ui-fluid">
+                
+            </div>
+            <p:tabMenu style="margin-bottom:20px">
+                <p:menuitem value="Home"></p:menuitem>
+                <p:menuitem value="Empleado" outcome="empleados" ></p:menuitem>
+                <p:menuitem value="Departamento" outcome="departamentos"></p:menuitem>
+                <p:menuitem value="Logout" actionListener="#{usuarioBean.cerrarSesion()}" action="/login?faces-redirect=true"></p:menuitem>
+            </p:tabMenu>
+            <p>Bienvenido</p>
+            <p>#{usuarioBean.usuario.uname}</p>
+        </h:form>
+    </h:body>
+</html>
+

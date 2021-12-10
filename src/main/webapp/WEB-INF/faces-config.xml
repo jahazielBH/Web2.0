@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<faces-config version="2.3"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    <!--<faces-config version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">-->
+    <navigation-rule>
+        <from-view-id>/faces/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/faces/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>empleado</from-outcome>
+            <to-view-id>/faces/empleados.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>departamento</from-outcome>
+            <to-view-id>/faces/departamentos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>signup</from-outcome>
+            <to-view-id>/faces/signup.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>usuarioBean</managed-bean-name>
+        <managed-bean-class>com.mycompany.bean.UsuarioBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>EmpleadoBean</managed-bean-name>
+        <managed-bean-class>org.mycompany.bean.EmpleadoBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>DepartamentoBean</managed-bean-name>
+        <managed-bean-class>org.mycompany.bean.DepartamentoBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+</faces-config>
